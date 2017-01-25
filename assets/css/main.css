@@ -2228,8 +2228,8 @@
 		.button.style2,
 		button.style2 {
 			background-color: transparent;
-			border: solid 2px #e5e6e7;
-			color: inherit;
+			border: solid 2px #a1a1a2;
+			color: #a1a1a2;
 		}
 
 			input[type="button"].style2:hover,
@@ -2379,20 +2379,20 @@
 /* Dark */
 
 	.dark {
-		color: #fff;
+		color: #8a8c8d;
 	}
 
 		.dark a {
-			color: #fff;
+			color: #000;
 		}
 
 		.dark .button.style2 {
 			border-color: inherit;
-			background-color: rgba(64, 64, 64, 0.05);
+			background-color: #8a8c8d;
 		}
 
 			.dark .button.style2:hover {
-				background-color: rgba(255, 255, 255, 0.1);
+				background-color: #d2d3d4;
 			}
 
 			.dark .button.style2.down {

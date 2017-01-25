@@ -4,56 +4,49 @@
 @import 'libs/skel';
 
 /*
-	Fractal by HTML5 UP
-	html5up.net | @n33co
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Spotlight */
+/* Tiles */
 
-	.spotlight {
-		.image {
-			width: 25%;
-			display: inline-block;
-			vertical-align: middle;
-		}
-
-		.content {
-			width: 65%;
-			display: inline-block;
-			vertical-align: middle;
-		}
-
+	.tiles {
 		&:after {
 			content: '';
 			display: block;
 			clear: both;
 		}
 
-		&:nth-child(2n) {
-			.image {
-				margin: 0 (_size(element-margin) * 1.5) 0 0;
+		article {
+			float: left;
+
+			> a {
+				padding-top: 50%;
+				margin-top: -1.75em;
 			}
 
-			.content {
-				text-align: left;
+			body:not(.is-touch) & {
+				&:hover {
+					> .image {
+						@include vendor('transform', 'none');
+					}
+				}
 			}
 		}
 	}
 
-/* Header */
+/* Footer */
 
-	#header {
-		height: auto;
-		text-align: center;
+	#footer {
+		> .inner {
+			section {
+				float: left;
+			}
 
-		.content {
-			display: inline-block;
-			vertical-align: middle;
-		}
-
-		.image {
-			display: inline-block;
-			vertical-align: middle;
+			.copyright {
+				clear: both;
+				padding-top: (_size(element-margin) * 2);
+			}
 		}
 	}

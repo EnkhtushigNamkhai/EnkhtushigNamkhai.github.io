@@ -1,8 +1,16 @@
 /*
-	Fractal by HTML5 UP
-	html5up.net | @n33co
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+/* Form */
+
+	form .field {
+		float: none !important;
+		width: 100% !important;
+		padding-left: 0 !important;
+	}
 
 /* Button */
 
@@ -11,9 +19,7 @@
 	input[type="button"],
 	button,
 	.button {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-		border: solid 2px #e6e6e6 !important;
+		border: solid 2px #585858 !important;
 	}
 
 		input[type="submit"]:hover,
@@ -21,7 +27,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border: solid 2px #e6e6e6 !important;
+			border-color: #f2849e !important;
 		}
 
 		input[type="submit"].special,
@@ -32,61 +38,36 @@
 			border: none !important;
 		}
 
-			input[type="submit"].special:hover,
-			input[type="reset"].special:hover,
-			input[type="button"].special:hover,
-			button.special:hover,
-			.button.special:hover {
-				border: none !important;
-			}
+/* Tiles */
 
-/* Image */
-
-	.image {
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+	.tiles article > .image:before, .tiles article > .image:after {
+		display: none;
 	}
-
-		.image img {
-			position: relative;
-			-ms-behavior: url("assets/js/ie/PIE.htc");
-		}
-
-		.image.phone:before, .image.phone:after {
-			display: none;
-		}
-
-		.image.phone .inner:before, .image.phone .inner:after {
-			display: none;
-		}
-
-/* List */
-
-	ul.icons li {
-		padding: 0 0 0 1.5em;
-	}
-
-		ul.icons li:first-child {
-			padding-left: 0 !important;
-		}
-
-		ul.icons li .icon:before {
-			font-size: 24px;
-		}
-
-	ul.icons.major li {
-		padding: 0 0 0 2.5em;
-	}
-
-		ul.icons.major li .icon:before {
-			font-size: 48px;
-		}
 
 /* Header */
 
-	#header {
-		min-height: 0;
+	#header .logo .symbol {
+		display: none;
 	}
 
-		#header .image {
-			margin: 0 0 2em 0;
+	#header nav ul li a[href="#menu"] {
+		text-indent: 0;
+		width: auto;
+		font-size: 0.8em;
+	}
+
+		#header nav ul li a[href="#menu"]:before, #header nav ul li a[href="#menu"]:after {
+			display: none;
+		}
+
+/* Footer */
+
+	#footer > .inner section {
+		width: 50%;
+		margin-left: 3em;
+	}
+
+		#footer > .inner section:first-child {
+			margin-left: 0;
+			width: 40%;
 		}
