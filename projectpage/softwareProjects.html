@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+  Phantom by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Software Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Software Projects</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <h2>Software Projects</h2>
+            <ul>
+              <li><a href="#Thesis">Thesis</a></li>
+              <li><a href="#MovieDB">DEMI Movie DB</a></li>
+              <li><a href="#InfoMapp">InfoMapp</a></li>
+              <li><a href="#TextAnalysis">Text Analysis</a></li>
+              <li><a href="#TicTacToe">TicTacToe</a></li>
+              <li><a href="#Offspring">Offspring</a></li>
+           <!--    <li><a href="#Robot">Flappy Bird</a></li> -->
+              <li><a href="index.html">Projects Home</a></li>
+              
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+              <h1>Software Projects! 💻</h1>
+             
+
+              <a id="Thesis"></a>
+              <h3 class="projectTitle">Amazon Architecture Visualization</h3>
+             
+
+              <p><i><b>Tools/Tech stack used:</b> Node/Express, Axios, Postgres, Artillery, Faker.js, New Relic</i></p>
+              
+                <p>The app that we made was an Amazon clone. To determine if at the time of prime trial sign up, if users that spend above 100$ are more likely to stay as a prime member versus those that don’t, we thought about the types of services that Amazon might actually have.</p>
+                
+                <p>The service that I worked on was Transactions:</p>
+                
+                <ul>
+                  <li>
+                    Receives user transactions from the client service, and stores the incoming transactions before sending them off to another service that completes the charging of the user and paying of the vendors. Once the transaction is complete, It updates the transaction status to completed if it was a successful transaction, and failed, if the transaction failed for some reason (i.e. account did not have enough funds).
+                  </li>
+                  <li>Tells inventory to update</li>
+                  <li>Also sends to the Users service, if a user subscribed or unsubscribed from the free trial.</li>
+                </ul>
+
+                <p>I used postgres to store the Transactions, because I needed the ACID properties of a relational database since Data integrity was critical in my service
+                I started running artillery with a constant duration of 10s and slowly increased the arrival rate from 10, to 100 and then to 1000, (all completed with no errors, but latency was bad)</p>
+
+                <p><i>My starting RPS was about 190  but I was able to make it vary from 300-400 RPS with my optimizations.</i></p>
+
+                
+                
+                <p>LoadTesting setup: I ran Artillery with the duration of 10s with 1000RPS (in total 10,000 Request are made)
+                   <span class="image main" id="small"><img src="software/ArtilleryYMLFile.jpg" alt="" /></span>
+                  <p>My optimizations:</p>
+                <ol>
+                <li><b>First optimization:</b> Batch inserting the multiple products for a single transaction into the PurchasedProducts which got me to about 195 RPS. There wasn’t a significant increase because for my load test, I only had a max of 5 products per transaction. So to actually see how effective the batch insert was, I ran a different test, where I increased the number of products to 100 and measured the RPS and saw that without batch inserting, it processed 18RPS but with batch inserting it processed 170RPS.</li>
+                
+                <li><b>Second optimization:</b> Adding node clusters. 
+                 By adding more workers, I was able to get to about 214RPS.</li>
+                
+                <li><b>Third optimization:</b> From new relic, I was able to see that my insert into the userTransaction table was taking up the most time and that was because userTransaction had a lot of columns with type text and the table was just overloaded with data.
+                So, I decided to separate it out into two smaller tables and used varchar instead.
+                I expected that the updates from pending status to Completed/Failed would be faster, because the table was now so much smaller.
+                This optimization made my RPS to about 270. </li>
+              </ol>
+              </p>
+                
+                As I increased the arrival rate for Artillery from a 1,000RPS to 10,000RPS, I noticed that my average RPS varied from 300 - 400RPS. So I was able to increase the RPS by almost <b>double</b> the amount with these optimizations!
+              </p>
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+              
+
+              <a id="MovieDB"></a>
+              <h3 class="projectTitle">Movie DataBase 🎥</h3>
+              <!-- <span class="image main"><img src="images/pic17.png" alt="" /></span> -->
+              <p><i><b>Stack used:</b> React, Redux, React Router, Node/Express, MongoDb/Mongoose, MaterialUI</i></p>
+               <p>
+                <ul>
+                  <li>Built on top of an already existing app that gathered and displayed various data for a movie.</li> 
+                  
+                  <li>Implemented a comparison saving feature, to provide more control of the data to the user, using React with Redux for the frontend, to keep the state of the app centralized, and a Node/express server with a Mongo database for the backend </li> 
+                  
+                  <li>Added and edited the front end structure of the overall app to effectively isolate each component so the other members could concentrate only on their assigned components</li> 
+                
+                For better modularity and clarity of code, simplified the routing process of the app by using react Router
+              </ul>
+              </p>
+            
+              <p>Here is a demo video:</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/ia2zShTmDSk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+
+              <a id="InfoMapp"></a>
+              <h3 class="projectTitle">InfoMapp 🌏</h3>
+      
+              <p><i><b>Stack used:</b> React, Node/Express, MongoDb/Mongoose, HTML/CSS, Javascript</i></p>
+
+							<p>An app that takes in a user specified geolocation/city and displays various regional information.
+                <ul>
+                  <li>Made the user interaction more visible and tangible by creating an interactive map with Google Maps API</li>
+                  <li>Made the search space of our problem smaller by only allowing users to click and search for cities in the US only, to do this, uploaded the data from the US Census and utilized the Google Fusion Tables to create a polygon overlay over the map</li>
+                  <li>Styled the webpage using CSS/Bootstrap</li>
+              </ul>
+              </p>
+              
+              <p>Here is a demo video:</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/NoGiMUbQl1Y" frameborder="0" allowfullscreen></iframe>
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+              <a id="TextAnalysis"></a>
+              <h3 class="projectTitle">Text Analysis 📈</h3>
+              <!-- <span class="image main"><img src="images/pic17.png" alt="" /></span> -->
+              <p><i><b>Stack used:</b> React, CSS/HTML, Node/express, MongoDb/Mongoose, Javascript</i></p>
+              
+              <p>This app allows people to keep track of their journal logs but also keep track of the sentiments that were associated with them. It also allows unauthenticated users to just use the text analysis service if they just wanted to analyze how positive/negative what they wrote seemed. To implement this application, I used the text analysis services provided by indico.</p>
+            
+              <p>Here is a demo video:</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/fcrcOeoF6OY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+              <a id="TicTacToe"></a>
+              <h3 class="projectTitle">Tic Tac Toe</h3>
+              <!-- <span class="image main"><img src="images/pic17.png" alt="" /></span> -->
+							<p><i><b>Stack used:</b> Jquery, Javascript, CSS/HTML</i></p>
+								<p>
+							  A simple TicTacToe game I made from scratch as a side project.
+					  	  For this project, I started off with implementing a TicTacToe game for 2 users, which meant that a single player could not play my game. :( So, in order to allow more people to play my TicTacToe game and expand the number of my end users, I thought that it would be a great idea, if I could implement a computer that could play against the player. Which I think is more interesting to talk about, so I am going to talk about what I did to implement the auto player logic bellow.</p>
+
+						  	<p>I first decided to start off easy. The computer will chose a random move from the available moves on the board. Which was super easy to implement by just using the Math.random function in javascript.</p>
+
+						  	<p>Then, as I was playing the game with my new computer opponent, I was bothered by the fact that the computer was just making random moves and it didn't have any reasoning or logic behind it. Therefore, I explored more about the minmax algorithm, and decided to actually implement it myself to create my TicTacToe opponent. After a few minutes surfing the web, I was able to come up with a minmax algorithm that either beat me or at the worst case tied with me. 
+								<b>The idea behind minmax:</b> An algorithm that generates the whole game tree and tries to maximize it's win. Each end state gets a score, which is a greater number if the maximizing player wins and negative if the opponent wins and 0 if they are tied. The maximizing opponent was the computer, and the minimizing opponent was the player. So everytime the player made a move, the computer generated all the possible outcomes and made the move that had the max score.
+									<ul>This blog takes you step by step to implement the MinMax algorithm:
+										<li><a href="https://www.neverstopbuilding.com/blog/2013/12/13/tic-tac-toe-understanding-the-minimax-algorithm13/">Understanding MinMax Algorithm Blog</a></li>
+										<li><a href="https://en.wikipedia.org/wiki/Minimax">Wikipedia Intro to MinMax</a></li>
+									</ul> 
+								</p>
+
+								<p>So by this time, I was very satisfied with my TicTacToe game, however, I was once again bothered by the fact that a user can only tie with the computer player at best. I wanted the user to win sometimes too, so I decided to create a computer that had some randomness to it, but also had some logic, so that it wasn't completely useless.
+								Out of all the different skill levels, I found the medium logic to be a bit challenging because I didn't want to make it too smart. At the end, I decided to just block a user's move whenever there were 2 consecutive moves diagonally. And if the computer already has two marks in the rows, columns and diagonals, then it will make the move so that it can win.</p>
+                
+              
+                <span class="image small"><img id="small" src="software/tictactoe2.jpg" alt="" /></span>
+            	You can go here to play TicTacToe: <b><a href='http://ticktacktoegame.surge.sh' target="blank">Play!</a></b>
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+              <a id="HappyBird"></a>
+              <h3 class="projectTitle">Happy Bird 🐦  </h3>
+                <p>A Flappy Bird Clone, made using Swift and Xcode. The pipes move along to the left and once it's off the screen, it relocates itself again, so that it looks like there is continuous number of pipes. The Flappy Bird has gravity applied to it and whenever someone touches the screen or clicks, the bird jumps up a certain amount.</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/fUbwBleP5P4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <!-- <span class="image main"><img src="images/pic17.png" alt="" /></span> -->
+              
+              <br/>
+              <hr>
+              <br/>
+              <br/>
+
+
+              <a id="Offspring"></a>
+              <h3 class="projectTitle">Offspring</h3>
+              <!-- <span class="image main"><img src="images/pic16.png" alt="" /></span> -->
+              <p>The safety of their children is a constant worry in many parents’ lives. Whether they are at work or their children are at school, many parents are forced to spend time away from their children, which can be distressing or worrisome.
+              Our solution is Offspring, a mobile companion app and a dedicated, durable low-cost watch device for children that allows parents, guardians, and caretakers to easily track and communicate with their children. For more detailed documentation of our process please go <b><a href="https://medium.com/@sarahtencher/offspring-87d0aa815005#.hcnakve1r"> here</a></b>.</p>
+            
+              <p>Here is our final video demostrating the need for our app:</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Z2gYA27jXWs" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="copyright">
+                <li>&copy; Enkhtushig Namkhai. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP edited by Enkhtushig Namkhai</a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+
+  </body>
+</html>

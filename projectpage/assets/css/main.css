@@ -2371,6 +2371,12 @@
 			width: 100%;
 		}
 
+		#small {
+			display: block;
+			margin: 0 0 3em 0;
+			width: 50%;
+		}
+
 			.image.main img {
 				width: 100%;
 			}
@@ -2380,7 +2386,6 @@
 				.image.main {
 					margin: 0 0 2em 0;
 				}
-
 			}
 
 /* Table */
@@ -3354,3 +3359,14 @@
 			}
 
 		}
+
+.projectTitle {
+	color: #00c67e;
+	font-weight: bold;
+}
+
+hr {
+	color: #000;
+	background-color: #000;
+	height: 1px;
+}
