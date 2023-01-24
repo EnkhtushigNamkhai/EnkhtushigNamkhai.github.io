@@ -8,6 +8,7 @@ import { TechComponent } from './tech/tech.component';
 import { ArtworkComponent } from './artwork/artwork.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     TechComponent,
     ArtworkComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,
