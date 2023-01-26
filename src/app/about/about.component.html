@@ -1,13 +1,26 @@
 <div class="background">
     <span class="outer-img-container">
-            <img src="../../assets/bw.png" alt="Profile image of Enki" >
+        <img src="../../assets/bw.png" alt="Profile image of Enki" >
     </span>
     <span class="outer-text-container">
-        <h1 class="title">Hi, I’m Enki.</h1>
+            <c-dropdown>
+                    <button cButton cDropdownToggle color="secondary"></button>
+                    <ul cDropdownMenu dark>
+                      <li><a routerLink="/" cDropdownItem>Home</a></li>
+                      <li><a routerLink="/about" cDropdownItem>About</a></li>
+                      <li><a routerLink="/art" cDropdownItem>Art</a></li>
+                      <li><a routerLink="/tech" cDropdownItem>Tech</a></li>
+                      <li><a routerLink="/contact" cDropdownItem>Contact</a></li>
+                    </ul>
+                  </c-dropdown>
+        <h1 class="title">Hi, I’m <b style="color: red;">Enki.</b></h1>
+
         <div class="text-container">
             <p>
-                The motto I live by is, “Life is the C between B and D.” 
-                Life is the result of the choices you make between birth and death.
+                <em>
+                    The motto I live by is, “Life is the C between B and D.” 
+                    Life is the result of the choices you make between birth and death.
+                </em>
             </p> 
             <p>
                 I’m a curious soul who wants to know the details of everything. There is so much I want to learn and explore that at times, I feel that my lifetime might not be enough for all that the world has to offer, but I try my best to always stay curious. 

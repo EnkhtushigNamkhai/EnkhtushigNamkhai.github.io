@@ -10,7 +10,7 @@ import { ArtworkComponent } from './artwork/artwork.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { AlertModule,  CarouselModule} from '@coreui/angular';
+import { AlertModule,  CarouselModule, DropdownModule} from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { AlertModule,  CarouselModule} from '@coreui/angular';
     BrowserAnimationsModule,
     AlertModule,
     CarouselModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
