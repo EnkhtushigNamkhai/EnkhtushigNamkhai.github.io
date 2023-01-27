@@ -1,13 +1,65 @@
-c-carousel-item, img {
-    height: 80vh;
-    width: auto;
+// c-carousel-item, img {
+//     height: 80vh;
+//     width: auto;
+// }
+.background {
+    position: fixed;
+    background-image: url("../../assets/mongolianscript.svg");
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100vh;
+    right: 0;
+    opacity: 0.3;
 }
 
-img {
-    mix-blend-mode: color-burn;
+.art-outer-container {
+    display: flex;
+    flex-direction: row;
+} 
+
+.left-container {
+    width: 30%;
+    background-color: #A00000; 
 }
 
-#container-elem {
-    background-color: rgba(0,0,0,0.8);
+
+.right-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
 }
+
+.painting-container {
+    padding: 100px;
+}
+
+.painting-widget {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 50px;
+}
+
+.painting {
+    width: 50%;
+    box-shadow: 10px 10px 10px 0px #979797;
+    border: 10px outset white;
+}
+
+p {
+    display: inline;
+    align-self: center;
+    font-size: 1em;
+}
+
+c-dropdown {
+
+}
+
+// #container-elem {
+//     background-color: rgba(0,0,0,0.8);
+// }
 
