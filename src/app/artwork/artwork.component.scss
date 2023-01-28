@@ -1,12 +1,6 @@
-// c-carousel-item, img {
-//     height: 80vh;
-//     width: auto;
-// }
-
 .background {
     position: fixed;
     background-image: url("../../assets/mongolianscript.svg");
-
     background-repeat: no-repeat;
     width: 7%;
     height: 80vh;
@@ -14,7 +8,14 @@
     opacity: 0.1;
 }
 
-
+.nav {
+    text-align: center;
+    position: sticky;
+    top: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
 .art-outer-container {
     display: flex;
@@ -22,7 +23,6 @@
 } 
 
 .left-container {
- 
     width: 25vw;
     margin-top: -100px;
     background-color: rgb(0,0,0, 0.1);
@@ -30,36 +30,7 @@
 
 .painting:hover {
     cursor: pointer;
-}
-
-#flight:hover+video {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 25vw;
-}
-
-#float:hover+video {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 25vw;
-    cursor: pointer;
-}
-
-#hope:hover+video {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 25vw;
-    cursor: pointer;
-}
-
-video {
-    display: none;
+    filter: brightness(50%);
 }
 
 .right-container {
@@ -87,14 +58,7 @@ video {
     border: 10px outset white;
 }
 
-.nav {
-    text-align: center;
-    position: sticky;
-    top: 10px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
+
 p {
     align-self: center;
     font-size: 1em;
@@ -106,14 +70,20 @@ c-dropdown {
     }
 }
 
-.left-container-content {
+.displayVideo {
+    display: block;
     position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 25vw;
 }
 
-#self {
-    border: 1px solid black;
-    border-radius: 50px;
-    filter: grayscale(100%);
+video {
+    display: none;
+}
+
+.left-container-content {
+    position: fixed;
 }
 
 
@@ -121,6 +91,10 @@ c-dropdown {
 @media (max-width: 768px) {
     .art-outer-container {
         flex-direction: column;
+    }
+
+    .left-container {
+        margin-top: 0px;
     }
 
     .painting-container {

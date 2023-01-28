@@ -1,32 +1,8 @@
-<!-- <c-carousel id="container-elem" [transition]="'crossfade'">
-  <c-carousel-indicators></c-carousel-indicators>
-  <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of slides">
-      <img
-        alt="{{slide.title}}"
-        class="d-block w-100"
-        loading="lazy"
-        src="{{slide.src}}"
-      />
-      <c-carousel-caption class="d-none d-md-block">
-        <h3>{{slide.title}}</h3>
-        <p>{{slide.subtitle}}</p>
-      </c-carousel-caption>
-    </c-carousel-item>
-  </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel> -->
-<!-- <div class="clearfix">
-    <img cImg align="center" src="../../assets/flight.png"/>
-</div> -->
 <div class="background">
-
 </div>
 <div class="nav"> 
   <h1> This is my <b style="color: red;">A R T</b>
   </h1>  
-  <!-- <img height="32px" src="../../assets/logo.svg"> -->
   <c-dropdown>
       <button cButton cDropdownToggle color="secondary"></button>
       <ul cDropdownMenu dark>
@@ -42,72 +18,26 @@
 <div class="art-outer-container">
     <div class="left-container">
       <div class="left-container-content">
-
-          <!-- <img id="self" height="300px" src="../../assets/self.png"> -->
-          <!-- <div><p>Represented by <a src="https://atrium916.com/board/">Atrium916</a>, a local Sacramento shop, promoting circular economy.
-            If you are interested in purchasing any of the paintings here, please head to <a src="">my profile (TBD)</a>.
-          </p>
-          <p>I started my painting journey during the pandemic, where </p></div> -->
       </div>
      
-      
     </div>
     <div class="right-container">
-       
         <div class="painting-container">
             <p>Represented by <a href="https://atrium916.com/board/">Atrium916</a>, a local Sacramento shop, promoting circular economy.
               If you are interested in purchasing any of the paintings here, please head to <a href="">my profile (Coming soon)</a>.
             </p>
-
             <br/>
-            <div class="painting-widget">
-              <div>
-                  <img class="painting" id="flight" src="../../assets/flight.png"  />
-                  <video id="flight-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline>
-                      <source src="../../assets/flight.mp4" type="video/mp4">
-                  </video>
-              </div>
-              <p> <b>The Flight:</b> Oil painting on a 40"x30" canvas panel. This painting came about from a feeling I felt inside.
-                 During a difficult time in my life, I could always observe animals and be in awe of how strong and magestic they are.
-                They do not complain, they survive, they fly and they soar. Sometimes they may fall, but they always strive, and I've
-                 always found that to be fascinating when I was a little girl. My love for eagles and what they represent, drove me
-                  to create this painting. I didn't have a clear image before I started, but I knew what I wanted it to feel 
-                  like when someone looked at it. I wanted its wings to span a wider range, I wanted it to look just as magestic as the real one.
-              </p>
-            </div>
-
-            <div class="painting-widget">
-              <div>
-                  <img class="painting" id="float" src="../../assets/float.png"  />
-                  <video autoplay="autoplay" loop="true" muted defaultmuted playsinline>
-                      <source src="../../assets/float.mp4" type="video/mp4">
-                  </video>
-              </div>
-              <p> <b>Floating Through Space and Time:</b> Oil painting on a 30"x30" canvas. Inspired by the magical movement of 
-                jellyfish making their way through the waters. These creatures are never still, they are always in constant motion, which made me 
-                think about how time is always moving as well, and how the spaces around us are affected by the inhabitants. Sometimes, it's ok to just 
-                calmly float through life, we don't always have to go against the current. These creatures truly mezmerized me, and I wanted to capture this feeling. </p>
-            </div>
-
-            <div class="painting-widget">
-                <div>
-                    <img class="painting" id="hope"src="../../assets/hope.png"  />
-                    <video autoplay="autoplay" loop="true" muted defaultmuted playsinline>
-                        <source src="../../assets/hope.mp4" type="video/mp4">
-                    </video>
+            <div *ngFor="let painting of paintings">
+                <div class="painting-widget">
+                    <div>
+                        <img (mouseenter)="onMouseEnter(painting)" class="painting" [src]="painting.src"/>
+                        <video [id]="painting.id" loop="true" muted defaultmuted playsinline autoplay controls="true">
+                            <source [src]="painting.videoSrc" type="video/mp4">
+                        </video>
+                    </div>
+                    <p> <b>{{painting.title}}</b> {{painting.description}}</p>
                 </div>
-                <p> <b>Field of hope:</b> Oil painting on a 18"x24" canvas panel.</p>
             </div>
-
-          <div class="painting-widget"> 
-            <div>
-                <img class="painting" src="../../assets/grace.png"  />
-                <!-- <video autoplay="autoplay" loop="true" muted defaultmuted playsinline>
-                    <source src="../../assets/.mp4" type="video/mp4">
-                </video> -->
-            </div>
-            <p> <b>Into Grace:</b> Oil painting on a 18"x24" canvas panel.</p>
-          </div>
         </div>  
     </div> 
 </div>
