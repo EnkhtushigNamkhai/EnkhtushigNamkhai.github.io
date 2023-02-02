@@ -28,7 +28,6 @@ export class ArtworkComponent implements AfterViewInit {
 
       const videoElemToDisplay : Element = document.querySelector('#'+ painting.id)!;
       videoElemToDisplay.classList.toggle('displayVideo');
-      // videoElemToDisplay.play();
       this.displayedVideoId = painting.id;
     }
   }
@@ -56,7 +55,7 @@ export class ArtworkComponent implements AfterViewInit {
       description: ` Oil painting on a 30"x30" canvas. Inspired by the magical movement of 
       jellyfish making their way through the waters. These creatures are never still, they are always in constant motion, which made me 
       think about how time is always moving as well, and how the spaces around us are affected by the inhabitants. Sometimes, it's ok to just 
-      calmly float through life, we don't always have to go against the current. These creatures truly mezmerized me, and I wanted to capture this feeling. </p>
+      calmly float through life, we don't always have to go against the current. These creatures truly mezmerized me, and I wanted to capture this feeling.
 `,
     },
     {

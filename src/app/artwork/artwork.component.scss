@@ -113,5 +113,23 @@ video {
 
 // 320px — 480px: Mobile devices
 @media (max-width: 480px) {
+     .art-outer-container {
+        flex-direction: column;
+    }
 
+    .left-container {
+        margin-top: 0px;
+    }
+
+    .painting-container {
+        padding: 0;
+    }
+
+    .painting-widget {
+        flex-direction: column;
+    }
+
+    .left-container-content {
+        position: unset;
+    }
 }
