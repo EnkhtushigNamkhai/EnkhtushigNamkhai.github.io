@@ -1,42 +1,54 @@
 <div class="background">
 </div>
-<div class="nav"> 
-  <h1> This is my <b style="color: red;">A R T</b>
-  </h1>  
-  <c-dropdown>
-      <button cButton cDropdownToggle color="secondary"></button>
-      <ul cDropdownMenu dark>
-        <li><a routerLink="/" cDropdownItem>Home</a></li>
-        <li><a routerLink="/about" cDropdownItem>About</a></li>
-        <li><a routerLink="/art" cDropdownItem>Art</a></li>
-        <li><a routerLink="/tech" cDropdownItem>Tech</a></li>
-      </ul>
-</c-dropdown>
+<div class="nav">
+    <h1> This is my
+        <b style="color: red;">A R T</b>
+    </h1>
+    <c-dropdown>
+        <button cButton cDropdownToggle color="secondary"></button>
+        <ul cDropdownMenu dark>
+            <li>
+                <a routerLink="/" cDropdownItem>Home</a>
+            </li>
+            <li>
+                <a routerLink="/about" cDropdownItem>About</a>
+            </li>
+            <li>
+                <a routerLink="/art" cDropdownItem>Art</a>
+            </li>
+            <li>
+                <a routerLink="/tech" cDropdownItem>Tech</a>
+            </li>
+        </ul>
+    </c-dropdown>
 </div>
 
 <div class="art-outer-container">
     <div class="left-container">
-      <div class="left-container-content">
-      </div>
-     
+        <div class="left-container-content">
+        </div>
+
     </div>
     <div class="right-container">
         <div class="painting-container">
-            <p>Represented by <a href="https://atrium916.com/board/">Atrium916</a>, a local Sacramento shop, promoting circular economy.
-              If you are interested in purchasing any of the paintings here, please head to <a href="">my profile (Coming soon)</a>.
+            <p>Represented by
+                <a target="_blank" href="https://atrium916.com/board/">Atrium916</a>, a local Sacramento shop, promoting circular economy. If you are interested in purchasing any
+                of the paintings here, please head to
+                <a target="_blank" href="https://sacramento.shop/pages/seller-profile/enkisworld">my profile</a>.
             </p>
             <br/>
             <div *ngFor="let painting of paintings">
                 <div class="painting-widget">
                     <div>
-                        <img (mouseenter)="onMouseEnter(painting)" class="painting" [src]="painting.src"/>
+                        <img (mouseenter)="showVideo(painting)" class="painting" [src]="painting.src" />
                         <video [id]="painting.id" loop="true" muted defaultmuted playsinline autoplay controls="true">
                             <source [src]="painting.videoSrc" type="video/mp4">
                         </video>
                     </div>
-                    <p> <b>{{painting.title}}</b> {{painting.description}}</p>
+                    <p>
+                        <b>{{painting.title}}</b> {{painting.description}}</p>
                 </div>
             </div>
-        </div>  
-    </div> 
+        </div>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tech',

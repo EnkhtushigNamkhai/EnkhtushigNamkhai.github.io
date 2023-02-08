@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 interface Painting {
   id: string;
-  src:string;
+  src: string;
   videoSrc: string;
   title: string;
   description: string;
@@ -19,20 +19,20 @@ export class ArtworkComponent implements AfterViewInit {
   displayedVideoId = "flight";
 
   ngAfterViewInit() {
-    document.querySelector('#'+ this.displayedVideoId)!.classList.add('displayVideo');
+    document.querySelector('#' + this.displayedVideoId)!.classList.add('displayVideo');
   }
 
-  onMouseEnter(painting: Painting) {
+  showVideo(painting: Painting) {
     if (painting.id !== this.displayedVideoId) {
-      document.querySelector('#'+ this.displayedVideoId)!.classList.toggle('displayVideo');
+      document.querySelector('#' + this.displayedVideoId)!.classList.toggle('displayVideo');
 
-      const videoElemToDisplay : Element = document.querySelector('#'+ painting.id)!;
+      const videoElemToDisplay: Element = document.querySelector('#' + painting.id)!;
       videoElemToDisplay.classList.toggle('displayVideo');
       this.displayedVideoId = painting.id;
     }
   }
 
-  constructor() { 
+  constructor() {
     this.paintings = [{
       id: 'flight',
       src: '../../assets/flight.png',
@@ -72,7 +72,7 @@ export class ArtworkComponent implements AfterViewInit {
       title: 'Into Grace',
       description: `Oil painting on a 18"x24" canvas panel.`
     },
-  ];
+    ];
   }
 
 }
