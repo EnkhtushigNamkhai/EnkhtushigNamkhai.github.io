@@ -37,7 +37,7 @@ export class ArtworkComponent implements AfterViewInit {
       id: 'flight',
       src: '../../assets/flight.png',
       videoSrc: '../../assets/flight.mp4',
-      title: 'The Flight: ',
+      title: 'The Flight',
       description: `Oil painting on a 40\"x30\" canvas panel. 
       This painting came about from a feeling I felt inside. During a difficult time in my life,
       I could always observe animals and be in awe of how strong and magestic they are. They do not complain,
@@ -51,7 +51,7 @@ export class ArtworkComponent implements AfterViewInit {
       id: 'float',
       src: '../../assets/float.png',
       videoSrc: '../../assets/float.mp4',
-      title: 'Floating Through Time and Space: ',
+      title: 'Floating Through Time and Space',
       description: ` Oil painting on a 30"x30" canvas. Inspired by the magical movement of 
       jellyfish making their way through the waters. These creatures are never still, they are always in constant motion, which made me 
       think about how time is always moving as well, and how the spaces around us are affected by the inhabitants. Sometimes, it's ok to just 
@@ -62,7 +62,7 @@ export class ArtworkComponent implements AfterViewInit {
       id: 'hope',
       src: '../../assets/hope.png',
       videoSrc: '../../assets/hope.mp4',
-      title: 'The Field of Hope: ',
+      title: 'Field of Hope',
       description: `Oil painting on a 18"x24" canvas panel.`
     },
     {
