@@ -16,12 +16,12 @@ float: right;
 }
 
 .outer-text-container {
- font-size: 1rem;
+ font-size: 13px;
 }
 
 .text-container {
     flex: 1;
- padding: 0 100px;
+    padding: 0 100px;
 }
 
 // ****** Image styles*********** 
@@ -49,10 +49,10 @@ img {
 
 
 // 481px — 768px: iPads, Tablets
-@media (max-width: 768px) {
+@media (max-width: 1360px) {
     .background {
       flex-direction: column;
-      padding: 5px;
+      padding: 60px;
       
     }
     .outer-text-container {
@@ -68,7 +68,8 @@ img {
 // 320px — 480px: Mobile devices
 @media (max-width: 480px) {
     .background {
-      flex-direction: column
+      flex-direction: column;
+      padding: 60px;
       
     }
     .text-container {

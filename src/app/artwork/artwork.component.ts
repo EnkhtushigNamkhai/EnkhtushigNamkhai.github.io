@@ -8,11 +8,10 @@ interface Painting {
   description: string;
 }
 
-
 @Component({
   selector: 'app-artwork',
   templateUrl: './artwork.component.html',
-  styleUrls: ['./artwork.component.scss']
+  styleUrls: ['./artwork.component.scss'],
 })
 export class ArtworkComponent implements AfterViewInit {
   paintings: Painting[];
@@ -63,7 +62,8 @@ export class ArtworkComponent implements AfterViewInit {
       src: '../../assets/hope.png',
       videoSrc: '../../assets/hope.mp4',
       title: 'Field of Hope',
-      description: `Oil painting on a 18"x24" canvas panel.`
+      description: `Oil painting on a 18"x24" canvas panel. Had a lot of fun painting this image! I loved the different bright and vivid colors.
+      `
     },
     {
       id: 'grace',

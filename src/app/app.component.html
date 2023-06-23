@@ -1,3 +1,14 @@
 <div>
-  <router-outlet></router-outlet>
+  <div class="menu">
+    <ul>
+      <li><a id="home" routerLink="/" >Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/art">Art</a></li>
+      <li><a routerLink="/tech">Tech</a></li>
+    </ul>
+  </div>
+  <div [@routerFade]="getRouterOutletState(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  
 </div>

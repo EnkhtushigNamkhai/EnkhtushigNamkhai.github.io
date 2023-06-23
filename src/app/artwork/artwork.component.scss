@@ -1,13 +1,14 @@
-.nav {
-    text-align: center;
-    position: sticky;
-    padding: 60px;
-    justify-content: space-between;
-}
 
+.nav {
+    padding-left: 60px;
+}
 .art-outer-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    position: absolute;
+    padding-top: 60px;
+    overflow:scroll;
 } 
 
 .overview-text {
@@ -20,7 +21,7 @@
 .left-container {
     width: 25vw;
     margin-top: -100px;
-    background-color: rgb(0,0,0, 0.1);
+    // background-color: #979292;
 }
 
 .right-container {
@@ -37,15 +38,19 @@ c-dropdown {
 
 .displayVideo {
     display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    height: 100%;
+    opacity: 0.5;
     width: 25vw;
+
 }
 
 video {
-    display: none;
-    z-index: 100;
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+    transition: margin 1s linear;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .left-container-content {
@@ -103,8 +108,9 @@ video {
 .painting-container {
     padding: 0 100px 0 60px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 60px;
+    align-items: center;
 }
 
 .card {
@@ -169,6 +175,14 @@ p {
     opacity: 1;
     transition-delay: 0.5s;
 }
+
+.card:hover video {
+    opacity: 1;
+    margin-left: 600px;
+    visibility: visible;
+}
+
+
 
 .painting:hover {
     cursor: pointer;

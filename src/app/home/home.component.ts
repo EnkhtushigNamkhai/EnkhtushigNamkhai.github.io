@@ -12,8 +12,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy  {
   constructor() {}
 
    ngAfterViewInit() {
+    console.log('ngAfterViewInit called');
     let options = {
-      root: document.querySelector(".background"), //defaults to Viewport 
+      root: document.querySelector(".outline"), //defaults to Viewport 
       rootMargin: '0px',
       threshold: 1.0
     }
@@ -24,6 +25,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy  {
    }
    
    ngOnDestroy() {
+    console.log('observer disconnected called');
      this.observer!.disconnect();
    }
 

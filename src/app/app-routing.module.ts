@@ -6,14 +6,17 @@ import { TechComponent } from './tech/tech.component';
 import { ArtworkComponent } from './artwork/artwork.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { SweProjectsComponent } from './swe-projects/swe-projects.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, data: { animationState: 'routerFade' }
+  },
   { path: 'about', component: AboutComponent },
   { path: 'art', component: ArtworkComponent },
   { path: 'tech', component: TechComponent},
+  { path: 'tech/swe-projects', component: SweProjectsComponent },
 ];
 
 @NgModule({

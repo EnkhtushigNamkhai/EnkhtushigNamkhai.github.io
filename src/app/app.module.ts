@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { AlertModule,  CarouselModule, DropdownModule} from '@coreui/angular';
+import { SweProjectsComponent } from './swe-projects/swe-projects.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AlertModule,  CarouselModule, DropdownModule} from '@coreui/angular';
     ContactComponent,
     HomeComponent,
     MenuBarComponent,
+    SweProjectsComponent,
 
   ],
   imports: [

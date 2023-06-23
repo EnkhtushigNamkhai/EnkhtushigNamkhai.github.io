@@ -1,22 +1,14 @@
-<div>
-    <c-dropdown>
-        <button cButton cDropdownToggle color="secondary"></button>
-        <ul cDropdownMenu dark>
-            <li>
-                <a routerLink="/" cDropdownItem>Home</a>
-            </li>
-            <li>
-                <a routerLink="/about" cDropdownItem>About</a>
-            </li>
-            <li>
-                <a routerLink="/art" cDropdownItem>Art</a>
-            </li>
-            <li>
-                <a routerLink="/tech" cDropdownItem>Tech</a>
-            </li>
-        </ul>
-    </c-dropdown>
+<div class="background">
+ 
     <div class="background-section">
+
+        <h1> Here is my
+            <b style="color : red">T E C H</b> background
+        </h1>
+
+     
+        <br>
+        <br>
         <h2>
             <em>UC Berkeley,</em> BA in Computer Science</h2>
         <h2>
@@ -45,33 +37,17 @@
                 <i>in progress</i>)</li>
         </ul>
 
-        <h2>Courses/certificates (non college):</h2>
+        <h2>Courses/certificates:</h2>
         <ul>
+
             <li>Udemy: Docker/Kubernetes </li>
             <li>Udemy: Fundamentals for BE Engineering </li>
             <li>Udemy: Fundamentals for Networking </li>
             <li>Udemy: Fundamentals for Database Engineering </li>
         </ul>
 
+        <button routerLink="/tech/swe-projects">See software projects!</button>
+        <!-- <button routerLink="/tech/all-projects">See miscellaneous projects!</button> -->
 
-        <div>
-            <h1>These are my personal
-                <b style="color : red">P R O J E C T S</b>
-            </h1>
-            <p>Coming soon...</p>
-
-            <!-- <div class="project-widget" *ngFor="let project of projects">
-                    <iframe *ngIf="project.videoSrc" width="560" height="315" [src]="project.videoSrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    <img *ngIf="project.imageSrc" width="560" height="315" [src]="project.imageSrc">
-                    <p>{{project.description}}</p>
-                </div> -->
-        </div>
     </div>
-
-
-
-
-
-
 </div>

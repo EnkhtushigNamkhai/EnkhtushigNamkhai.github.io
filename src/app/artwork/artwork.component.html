@@ -1,31 +1,9 @@
 <div class="art-outer-container">
-    <div class="left-container">
-        <div class="left-container-content">
-        </div>
-
-    </div>
     <div class="right-container">
         <div class="nav">
             <h1> This is my
                 <b style="color: red;">A R T</b>
             </h1>
-            <c-dropdown>
-                <button cButton cDropdownToggle color="secondary"></button>
-                <ul cDropdownMenu dark>
-                    <li>
-                        <a routerLink="/" cDropdownItem>Home</a>
-                    </li>
-                    <li>
-                        <a routerLink="/about" cDropdownItem>About</a>
-                    </li>
-                    <li>
-                        <a routerLink="/art" cDropdownItem>Art</a>
-                    </li>
-                    <li>
-                        <a routerLink="/tech" cDropdownItem>Tech</a>
-                    </li>
-                </ul>
-            </c-dropdown>
         </div>
         <div
             class="overview-text">
@@ -39,7 +17,7 @@
 
         <div class="painting-container">
             <div *ngFor="let painting of paintings">
-                <div class="card" (click)="showVideo(painting)">
+                <div class="card" (mouseenter)="showVideo(painting)">
                     <div class="imgbox">
                         <img class="painting" [src]="painting.src" />
                     </div>
@@ -50,13 +28,15 @@
                     <video [id]="painting.id" loop="true" muted defaultmuted playsinline autoplay controls="true">
                         <source [src]="painting.videoSrc" type="video/mp4">
                     </video>
-            
                 </div>
-            
             </div>
-               
-
         </div>
+    </div>
+
+    <div class="left-container">
+        <div class="left-container-content">
+        </div>
+
     </div>
 </div>
 

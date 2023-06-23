@@ -1,0 +1,25 @@
+.background {
+    padding: 60px;
+}
+
+img {
+    height: 300px;
+    width: auto;
+    display: block;
+}
+
+.project-widget {
+    width: 50%;
+}
+
+// 320px — 480px: Mobile devices
+@media (max-width: 480px) {
+
+}
+// 481px — 768px: iPads, Tablets
+@media (max-width: 768px) {
+    .project-widget {
+        width: 100%;
+    }
+
+}
