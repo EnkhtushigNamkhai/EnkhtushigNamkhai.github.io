@@ -4,5 +4,14 @@
 body {
     margin: 0;
     background-color: #E5E5E5;
+    color: rgba(44, 56, 74, 0.95);
 }
+
+:root {
+    --page-paddings: 60px;
+    --text-padings: 0 100px;
+    --body-font-size: 13px;
+  }
+
+
 

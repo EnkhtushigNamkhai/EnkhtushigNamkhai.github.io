@@ -1,5 +1,12 @@
 .background {
-    padding: 60px;
+    padding: var(--page-paddings);
+    padding-top: 100px;
+    font-size: var(--body-font-size);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 img {

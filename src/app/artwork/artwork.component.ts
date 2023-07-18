@@ -18,21 +18,43 @@ export class ArtworkComponent implements AfterViewInit {
   displayedVideoId = "flight";
 
   ngAfterViewInit() {
-    document.querySelector('#' + this.displayedVideoId)!.classList.add('displayVideo');
+    // document.querySelector('#' + this.displayedVideoId)!.classList.add('displayVideo');
+    // gsap.from('.painting', {
+    //   scale:2,
+    //   duration: 1,
+    //   delay: 1,
+    //   stagger: 2,
+    // });
   }
 
   showVideo(painting: Painting) {
-    if (painting.id !== this.displayedVideoId) {
-      document.querySelector('#' + this.displayedVideoId)!.classList.toggle('displayVideo');
+    // if (painting.id !== this.displayedVideoId) {
+    //   document.querySelector('#' + this.displayedVideoId)!.classList.toggle('displayVideo');
 
-      const videoElemToDisplay: Element = document.querySelector('#' + painting.id)!;
-      videoElemToDisplay.classList.toggle('displayVideo');
-      this.displayedVideoId = painting.id;
-    }
+    //   const videoElemToDisplay: Element = document.querySelector('#' + painting.id)!;
+    //   videoElemToDisplay.classList.toggle('displayVideo');
+    //   this.displayedVideoId = painting.id;
+    // }
   }
 
   constructor() {
-    this.paintings = [{
+    this.paintings = [
+    {
+      id: 'hope',
+      src: '../../assets/hope.png',
+      videoSrc: '../../assets/hope.mp4',
+      title: 'Field of Hope',
+      description: `Oil painting on a 18"x24" canvas panel. Had a lot of fun painting this image! I loved the different bright and vivid colors.
+      `
+    },
+    {
+      id: 'grace',
+      src: '../../assets/grace.png',
+      videoSrc: '../../assets/hope.mp4',
+      title: 'Into Grace',
+      description: `Oil painting on a 18"x24" canvas panel.`
+    },
+    {
       id: 'flight',
       src: '../../assets/flight.png',
       videoSrc: '../../assets/flight.mp4',
@@ -58,21 +80,38 @@ export class ArtworkComponent implements AfterViewInit {
 `,
     },
     {
-      id: 'hope',
-      src: '../../assets/hope.png',
-      videoSrc: '../../assets/hope.mp4',
-      title: 'Field of Hope',
-      description: `Oil painting on a 18"x24" canvas panel. Had a lot of fun painting this image! I loved the different bright and vivid colors.
-      `
+      id: 'peacock',
+      src: '../../assets/peacock.png',
+      videoSrc: '',
+      title: 'Peacock painting',
+      description: `Oil painting on a 18\"x24\" canvas panel.`
     },
     {
-      id: 'grace',
-      src: '../../assets/grace.png',
-      videoSrc: '../../assets/hope.mp4',
-      title: 'Into Grace',
-      description: `Oil painting on a 18"x24" canvas panel.`
+      id: 'me',
+      src: '../../assets/me.png',
+      videoSrc: '',
+      title: 'Representing me',
+      description: ` Oil painting in progress.`,
     },
     ];
+    
+
+  }
+
+  // enterGallery(event: Event) {
+  //   // after this click button I want to show my images
+  
+  // }
+
+  dosomething(event: Event) {
+    console.log((event.target! as Element).id!
+    );
+      // gsap.from(''), {
+      //   scale:2,
+      //   duration: 1,
+      //   delay: 1,
+      //   opacity: 0,
+      // });
   }
 
 }

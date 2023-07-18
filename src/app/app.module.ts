@@ -9,9 +9,9 @@ import { TechComponent } from './tech/tech.component';
 import { ArtworkComponent } from './artwork/artwork.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { AlertModule,  CarouselModule, DropdownModule} from '@coreui/angular';
+import {ButtonModule} from '@coreui/angular';
 import { SweProjectsComponent } from './swe-projects/swe-projects.component';
+
 
 @NgModule({
   declarations: [
@@ -21,17 +21,13 @@ import { SweProjectsComponent } from './swe-projects/swe-projects.component';
     ArtworkComponent,
     ContactComponent,
     HomeComponent,
-    MenuBarComponent,
     SweProjectsComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AlertModule,
-    CarouselModule,
-    DropdownModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

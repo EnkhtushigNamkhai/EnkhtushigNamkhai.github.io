@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate, query } from '@angular/animations';
 
-
 export const routerFade = trigger('routerFade', [
   transition('* => *', [
     query(':enter', [style({ opacity: 0, })], {
@@ -27,6 +26,10 @@ export const routerFade = trigger('routerFade', [
 })
 export class AppComponent {
   title = 'Enki';
+
+  constructor () {
+   
+  }
 
   getRouterOutletState(outlet: RouterOutlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';

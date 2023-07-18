@@ -21,8 +21,11 @@
     "@coreui/angular": "^4.3.8",
     "@coreui/coreui": "^4.2.6",
     "@coreui/icons-angular": "^4.3.7",
+    "@types/gsap": "^3.0.0",
     "bootstrap": "^5.2.3",
+    "gsap": "^3.12.2",
     "rxjs": "~7.8.0",
+    "split-type": "^0.3.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

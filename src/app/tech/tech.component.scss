@@ -1,50 +1,21 @@
-.background {
-    position: absolute;
+.tech-background {
     width: 100%;
-    height: 100%;
+    position: relative;
+    text-align: right;
+    height: 80vh;
+    padding: var(--page-paddings);
+    font-size: var(--body-font-size);
 }
-
-.project-widget {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
 .background-section {
-    text-align:center;
-    padding: 100px;
+    padding: var(--text-padings);
 }
 
 li {
     list-style: none;
 }
 
-a {
-    color: white; background-color: #5A827F; padding: 5px 11px; border: 2px solid #5a827f;
-}
-
 @media (max-width: 780px) {
-    .project-widget {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
 }
 
 @media (max-width: 480px) {
-    .project-widget {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .background-section {
-        text-align:left;
-        padding-top: 100px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 }
-
