@@ -15,7 +15,14 @@ li {
 }
 
 @media (max-width: 780px) {
+
 }
 
 @media (max-width: 480px) {
+    .tech-background {
+        padding: 10px;
+    }
+    .background-section {
+        padding: 0px;
+    }
 }

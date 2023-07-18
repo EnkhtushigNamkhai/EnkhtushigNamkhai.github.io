@@ -10,9 +10,9 @@ import SplitType from 'split-type';
 })
 export class HomeComponent implements OnInit {
   ngOnInit() {
-    console.log('apparently here is empty now? ' + ScrollTrigger.getAll().length);
     const myText = new SplitType("#my-text");
      gsap.registerPlugin(ScrollTrigger);
+     ScrollTrigger.config({ ignoreMobileResize: true });
      this.animateName();
      this.animateBackground();
    

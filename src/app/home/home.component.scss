@@ -1,28 +1,36 @@
 .background {
+    padding: var(--page-paddings);
     align-items: center;
     display: flex;
     flex-direction: column;
+    position: relative;
     height: 100vh;
     z-index: -1;
-    height: 80vh;
+    // height: 80vh;
+}
+
+#backgroundimage{
+    position: absolute;
+    bottom: 0;
 }
 
 .asset-container {
     padding-top: 100px;
     display: flex;
     justify-content: center;
-    height: 50%;
+    // height: 50%;
+    // width: 100%;
+    border-radius: 5px;
 }
-#asset {
-    clip-path: circle(34.2% at 50% 50%);
-}
+
 .asset-container::-webkit-scrollbar{
     display: none;
 }
 
-
-video {
-    opacity: calc(0.5);
+#asset {
+    // opacity: calc(0.5);
+    width: 60%;
+    border-radius: 50px;
 }
 
 //****************** Text animation styling *******************
