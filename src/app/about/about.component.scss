@@ -1,5 +1,5 @@
 .about-background {
-    z-index: -1; 
+    // z-index: -1; 
     padding: var(--page-paddings);
     position: relative;
     width: 100vw;
@@ -14,14 +14,14 @@
 
 #leaves {
     position: absolute;
-    top: 100px;
+    top: var(--page-paddings);
     z-index: -1;
 }
 
 // 481px — 768px: iPads, Tablets
 @media (max-width: 1360px) {
-    .background {
-        padding: 0px;
+    .about-background  {
+        padding: 10px;
     }
 
     .outer-text-container {
@@ -34,8 +34,8 @@
 
 // 320px — 480px: Mobile devices
 @media (max-width: 480px) {  
-    .background {
-        padding: 0px;
+    .about-background  {
+        padding: 10px;
     }
 
     .text-container {

@@ -6,7 +6,6 @@
     position: relative;
     height: 100vh;
     z-index: -1;
-    // height: 80vh;
 }
 
 #backgroundimage{
@@ -18,8 +17,6 @@
     padding-top: 100px;
     display: flex;
     justify-content: center;
-    // height: 50%;
-    // width: 100%;
     border-radius: 5px;
 }
 
@@ -28,9 +25,9 @@
 }
 
 #asset {
-    // opacity: calc(0.5);
     width: 60%;
     border-radius: 50px;
+    // opacity: 0.6;
 }
 
 //****************** Text animation styling *******************
@@ -50,4 +47,54 @@
     font-size: 4rem;
     text-transform: uppercase;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+//***************************** Media queries *******************************
+
+// 481px — 768px: iPads, Tablets
+@media screen and (max-width: 1360px) {
+    #my-text {
+        font-size: 4rem;
+    }
+}
+
+// 320px — 480px: Mobile devices
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    #asset {
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    .asset-container {
+        padding-top: 60px;
+    }
+
+    #my-text {
+        font-size: 2rem;
+    }
+
+    .background {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+    #asset {
+        width: 50%;
+        border-radius: 50px;
+    }
+
+    .asset-container {
+        padding-top: 60px;
+    }
+
+    #my-text {
+        font-size: 2rem;
+    }
+
+    .background {
+        padding: 10px;
+    }
 }
