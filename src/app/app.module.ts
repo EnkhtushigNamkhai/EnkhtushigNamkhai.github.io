@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import {ButtonModule} from '@coreui/angular';
 import { SweProjectsComponent } from './swe-projects/swe-projects.component';
+import { MiscComponent } from './misc/misc.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SweProjectsComponent } from './swe-projects/swe-projects.component';
     ContactComponent,
     HomeComponent,
     SweProjectsComponent,
+    MiscComponent,
   ],
   imports: [
     BrowserModule,

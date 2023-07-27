@@ -5,12 +5,12 @@
     flex-direction: column;
     position: relative;
     height: 100vh;
-    z-index: -1;
 }
 
-#backgroundimage{
+#backgroundimage {
     position: absolute;
     bottom: 0;
+    z-index: -1;
 }
 
 .asset-container {
@@ -20,16 +20,35 @@
     border-radius: 5px;
 }
 
-.asset-container::-webkit-scrollbar{
+.asset-container::-webkit-scrollbar {
     display: none;
 }
 
 #asset {
     width: 60%;
     border-radius: 50px;
-    // opacity: 0.6;
 }
 
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    bottom: 100px;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.arrow:hover {
+    border-color: green;
+    cursor: pointer;
+}
 //****************** Text animation styling *******************
 .my-text-container {
     z-index: 1;
